@@ -40,20 +40,20 @@ layout: default
     {% if page.previous %}
         {% assign prev = page.previous %}
         {% capture str_date %}{% include get_date.html raw_date=prev.date %}{% endcapture %}
-        <a href="{{ prev.url }}" class="button paginate-button paginate-button-prev" title='Плейлист {{ site.data.authors[prev.author].name }} "{{ prev.title }}" от {{ str_date | normalize_whitespace }}'><i class="fa fa-step-backward" aria-hidden="true"></i></a>
+        <a href="{{ prev.url }}" class="button paginate-button paginate-button-prev" title="Плейлист {{ site.data.authors[prev.author].name }} &quot;{{ prev.title }}&quot; от {{ str_date | normalize_whitespace }}"><i class="fa fa-step-backward" aria-hidden="true"></i></a>
         {% assign last = site.posts.last %}
         {% capture str_date %}{% include get_date.html raw_date=last.date %}{% endcapture %}
-        <a href="{{ last.url }}" class="button paginate-button paginate-button-first" title='Плейлист {{ site.data.authors[last.author].name }} "{{ last.title }}" от {{ str_date | normalize_whitespace }}'><i class="fa fa-fast-backward" aria-hidden="true"></i></a>
+        <a href="{{ last.url }}" class="button paginate-button paginate-button-first" title="Плейлист {{ site.data.authors[last.author].name }} &quot;{{ last.title }}&quot; от {{ str_date | normalize_whitespace }}"><i class="fa fa-fast-backward" aria-hidden="true"></i></a>
         {% endif %}
     </div>
     <div class="pure-u-1-2">
     {% if page.next %}
         {% assign next = page.next %}
         {% capture str_date %}{% include get_date.html raw_date=next.date %}{% endcapture %}
-        <a href="{{ next.url }}" class="button paginate-button paginate-button-next" title='Плейлист {{ site.data.authors[next.author].name }} "{{ next.title }}" от {{ str_date | normalize_whitespace }}'><i class="fa fa-step-forward" aria-hidden="true"></i></a>
+        <a href="{{ next.url }}" class="button paginate-button paginate-button-next" title="Плейлист {{ site.data.authors[next.author].name }} &quot;{{ next.title }}&quot; от {{ str_date | normalize_whitespace }}"><i class="fa fa-step-forward" aria-hidden="true"></i></a>
         {% assign first = site.posts.first %}
         {% capture str_date %}{% include get_date.html raw_date=first.date %}{% endcapture %}
-        <a href="{{ first.url }}" class="button paginate-button paginate-button-last" title='Плейлист {{ site.data.authors[first.author].name }} "{{ first.title }}" от {{ str_date | normalize_whitespace }}'><i class="fa fa-fast-forward" aria-hidden="true"></i></a>
+        <a href="{{ first.url }}" class="button paginate-button paginate-button-last" title="Плейлист {{ site.data.authors[first.author].name }} &quot;{{ first.title }}&quot; от {{ str_date | normalize_whitespace }}"><i class="fa fa-fast-forward" aria-hidden="true"></i></a>
     {% endif %}
     </div>
 </div>
