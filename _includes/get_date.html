@@ -1,0 +1,10 @@
+{% if include.raw_date %}
+{% assign months = "января|февраля|марта|апреля|мая|июня|июля|августа|сентября|октября|ноября|декабря" | split: "|" %}
+{% assign day = include.raw_date | date: "%e" %}
+{% assign m = include.raw_date | date: "%-m" | minus: 1 %}
+{% assign month = months[m] %}
+{% assign year = include.raw_date | date: "%Y" %}
+{{ day }} {{ month }} {{ year }}
+{% else %}
+You haven't pass date object
+{% endif %}

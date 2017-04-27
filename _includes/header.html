@@ -1,0 +1,17 @@
+<nav class="head-menu-wrapper">
+    <div class="pure-menu pure-menu-horizontal head-menu">
+        <a href="{{ site.url }}" class="pure-menu-heading site-title" id="site-name">{{ site.name }}</a>
+        <ul class="pure-menu-list">
+            <li class="pure-menu-item pure-menu-has-children pure-menu-allow-hover author-dropdown">
+                <a href="#" class="pure-menu-link">По авторам</a>
+                <ul class="pure-menu-children">
+                    {% for authorHash in site.data.authors %}
+                        {% assign author = authorHash[1] %}
+                        {% assign login = authorHash[0] %}
+                        <li class="pure-menu-item"><a href="/{{ login }}" class="pure-menu-link">{{ author.name }}</a></li>
+                    {% endfor %}
+                </ul>
+            </li>
+        </ul>
+    </div>
+</nav>

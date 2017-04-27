@@ -1,0 +1,51 @@
+---
+---
+
+{% assign author = site.data.authors[page.author] %}
+
+{% capture index_title %}Плейлисты {{ author.name }}{% endcapture %}
+{% include head.html title=index_title %}
+<body>
+<div>
+    {% include header.html %}
+    <div class="page-content">
+        <div class="posts-index">
+            {% assign posts = site.posts | where: "author", page.author %}
+            {% for post in posts %}
+            <a class="button playlist-thumb" href="{{ post.url }}">
+                <div class="playlist-thumb-cover" {% if post.cover %} style='background-image: url("{{ post.cover }}")' {% endif %}></div>
+                <div class="playlist-thumb-content">
+                    <div class="playlist-thumb-date">
+                        <i class="fa fa-calendar" aria-hidden="true"></i>{% include get_date.html raw_date=post.date %}
+                    </div>
+                    <div class="playlist-thumb-title">
+                        {{ post.title }}
+                    </div>
+                    <div class="playlist-thumb-meta">
+                        <div class="pure-g">
+                            <div class="pure-u-1-2">
+                                {% if post.track_count %}
+                                <span title="Треки"><i class="fa fa-list-ol" aria-hidden="true"></i>{{ post.track_count }}</span>
+                                {% endif %}
+                            </div>
+                            <div class="pure-u-1-2">
+                                {% if post.duration %}
+                                <span title="Продолжительность"><i class="fa fa-clock-o" aria-hidden="true"></i>{{ post.duration }}</span>
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </a>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+<input id="to-shave" type="hidden" value=".playlist-thumb-title;150">
+{% include footer.html %}
+
+<script src="/assets/js/shave.js"></script>
+<script src="/assets/js/base.js"></script>
+</body>
+</html>
