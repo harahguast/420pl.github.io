@@ -14,6 +14,17 @@ function shaveDivs() {
     }
 }
 
+function sanitizeEmbed() {
+    var aList = document.querySelectorAll('.embedplayer a');
+    for (var i = 0; i < aList.length; i++) {
+        var a = aList[i];
+        var playlistdIdx = a.href.indexOf('playlistd.ru');
+        if (playlistdIdx > 0) {
+            a.href = a.href.substring(playlistdIdx, a.href.length);
+        }
+    }
+}
+
 function startClock() {
     var titleEl = document.getElementById('site-name'),
         currentHour = 4,
