@@ -28,6 +28,11 @@ defaults:
       path: "gene/_posts"
     values:
       author: "gene"
+  
+  - scope:
+      path: "harahguast/_posts"
+    values:
+      author: "harahguast"
 
   - scope:
       path: "gene"
@@ -35,6 +40,13 @@ defaults:
       author: "gene"
       layout: "posts_index"
       permalink: "/gene/"
+      
+  - scope:
+      path: "harahguast"
+    values:
+      author: "harahguast"
+      layout: "posts_index"
+      permalink: "/harahguast/"
 
 
   - scope:
