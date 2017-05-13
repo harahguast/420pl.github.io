@@ -48,6 +48,12 @@ defaults:
       layout: "posts_index"
       permalink: "/harahguast/"
 
+  - scope:
+      path: "tam0jennik"
+    values:
+      author: "tam0jennik"
+      layout: "posts_index"
+      permalink: "/tam0jennik/"
 
   - scope:
       path: "assets/img"
