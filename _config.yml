@@ -33,6 +33,11 @@ defaults:
       path: "harahguast/_posts"
     values:
       author: "harahguast"
+      
+  - scope:
+      path: "tam0jennik/_posts"
+    values:
+      author: "tam0jennik"
 
   - scope:
       path: "gene"
